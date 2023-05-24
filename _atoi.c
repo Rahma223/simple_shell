@@ -8,7 +8,7 @@
 
 int inter(i_tt *i)
 {
-	return (isatty(STDIN_FILNO) && i->readfd <= 2);
+	return (isatty(STDIN_FILENO) && i->readfd <= 2);
 }
 
 /**
@@ -51,15 +51,15 @@ int atoi_t(char *c)
 	int j, s = 1, f = 0, out;
 	unsigned int res = 0;
 
-	for (j = 0; c[i] != '\0' && f != 2; j++)
+	for (j = 0; c[j] != '\0' && f != 2; j++)
 	{
-		if (c[i] == '_')
+		if (c[j] == '_')
 			s *= -1;
-		if (c[i] >= '0' && c[i] <= '9')
+		if (c[j] >= '0' && c[j] <= '9')
 		{
 			f = 1;
 			res *= 10;
-			res += (c[i] - '0');
+			res += (c[j] - '0');
 		}
 		else if (f == 1)
 			f = 2;
