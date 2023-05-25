@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * put_t - print input
+ * _eputs - print input
  * @ss: the string
  * Return: nothing
  */
 
-void put_t(char *ss)
+void _eputs(char *ss)
 {
 	int i = 0;
 
