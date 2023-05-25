@@ -146,12 +146,8 @@ char *_strdup(const char *);
 void put_t(char *);
 int _putchar(char);
 
-<<<<<<< HEAD
 /* toem_lists.c */
 lis_t *add_node(lis_t **, const char *, int);
-=======
-/* file of toem_lists.c */
->>>>>>> 480f5fe15ec1b2e5cdab55d968b7e8463114a925
 lis_t *add_node_end(lis_t **, const char *, int);
 size_t print_list_str(const lis_t *);
 int delete_node_at_index(lis_t **, unsigned int);
@@ -175,16 +171,12 @@ char **get_environ(i_tt *);
 int _unsetenv(i_tt *, char *);
 int _setenv(i_tt *, char *, char *);
 
-<<<<<<< HEAD
-/* toem_reall.c */
-=======
 /* file of toem_realloc.c */
->>>>>>> 480f5fe15ec1b2e5cdab55d968b7e8463114a925
 char *_memset(char *, char, unsigned int);
 void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
-<<<<<<< HEAD
+
 /* toem_memory.c */
 int bfree(void **);
 
@@ -193,7 +185,7 @@ int bfree(void **);
 char **strtow(char *, char *);
 char **strtow2(char *, char);
 
-=======
+
 /**
  * struct builtin - contains a builtin string.
  * @type: type.
@@ -218,7 +210,6 @@ char *find_path(i_tt *, char *, char *);
 
 /* file of loophsh.c */
 int loophsh(char **);
->>>>>>> 480f5fe15ec1b2e5cdab55d968b7e8463114a925
 
 #endif
 
