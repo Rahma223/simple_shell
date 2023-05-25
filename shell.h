@@ -142,5 +142,36 @@ int set_env(i_tt *);
 int unset_env(i_tt *);
 int pop_env(i_tt *);
 
+/* toem_string1.c */
+char *_strcpy(char *, char *);
+char *_strdup(const char *);
+void _puts(char *);
+int _putchar(char);
+
+/* toem_lists.c */
+lis_t *add_node(lis_t **, const char *, int);
+lis_t *add_node_end(lis_t **, const char *, int);
+size_t print_list_str(const lis_t *);
+int delete_node_at_index(lis_t **, unsigned int);
+void free_list(lis_t **);
+
+/* toem_lists1.c */
+size_t list_len(const lis_t *);
+char **list_to_strings(lis_t *);
+size_t print_list(const lis_t *);
+lis_t *node_starts_with(lis_t *, char *, char);
+ssize_t get_node_index(lis_t *, lis_t *);
+
+/* toem_string.c */
+int _strlen(char *);
+int _strcmp(char *, char *);
+char *starts_with(const char *, const char *);
+char *_strcat(char *, char *);
+
+/* toem_getenv.c */
+char **get_environ(i_tt *);
+int _unsetenv(i_tt *, char *);
+int _setenv(i_tt *, char *, char *);
+
 #endif
 

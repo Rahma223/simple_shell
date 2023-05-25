@@ -24,12 +24,12 @@ int uns(i_tt *i, char *ss)
 	char *pp, s;
 	int r;
 
-	pp = _strchr(ss, '=');
+	pp = str_ch(ss, '=');
 	if (!pp)
 		return (1);
 	s = *pp;
 	*pp = 0;
-	r = delet_node_at_index(&(i->alias),
+	r = delete_node_at_index(&(i->alias),
 			get_node_index(i->alias, node_starts_with(i->alias, ss, -1)));
 	*pp = s;
 	return (r);
@@ -46,7 +46,7 @@ int set_t(i_tt *i, char *ss)
 {
 	char *pp;
 
-	pp = _strchr(ss, '=');
+	pp = str_ch(ss, '=');
 	if (!pp)
 		return (1);
 	if (!*++pp)
@@ -68,12 +68,12 @@ int print_t(lis_t *n)
 
 	if (n)
 	{
-		pp = _strchr(n->str, '=');
+		pp = str_ch(n->str, '=');
 		for (s = n->str; s <= pp; s++)
 		_putchar(*s);
 		_putchar('\'');
-		_puts(pp + 1);
-		_puts("'\n");
+		put_t(pp + 1);
+		put_t("'\n");
 		return (0);
 	}
 	return (1);
@@ -103,7 +103,7 @@ int ali(i_tt *i)
 	}
 	for (ii = 1; i->argv[ii]; ii++)
 	{
-		pp = _strchr(i->argv[ii], '=');
+		pp = str_ch(i->argv[ii], '=');
 		if (pp)
 			set_t(i, i->argv[ii]);
 		else

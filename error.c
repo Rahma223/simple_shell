@@ -74,12 +74,10 @@ int put_str(char *ss, int fd)
 	int j = 0;
 
 	if (!ss)
-	{
 		return (0);
-		while (*ss)
-		{
-			j += put_fd(*ss++, fd);
-		}
-		return (j);
+	while (*ss)
+	{
+		j += put_fd(*ss++, fd);
 	}
+	return (j);
 }

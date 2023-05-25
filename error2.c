@@ -61,7 +61,7 @@ int print_dd(int in, int fd)
 	unsigned int _abs_, cur;
 
 	if (fd == STDERR_FILENO)
-		__putchar = _eputchar;
+		__putchar = put_ch;
 	if (in < 0)
 	{
 		_abs_ = -in;

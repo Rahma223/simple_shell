@@ -27,7 +27,7 @@ char *get_env(i_tt *i, const char *nam)
 	while (n)
 	{
 		pp = starts_with(n->str, nam);
-		if (pp & *pp)
+		if (pp && *pp)
 			return (pp);
 		n = n->next;
 	}
@@ -44,10 +44,10 @@ int set_env(i_tt *i)
 {
 	if (i->argc != 3)
 	{
-		_eputs("Incorrect number of arguements\n");
+		put_t("Incorrect number of arguements\n");
 		return (1);
 	}
-	if (set_env(i, i->argv[1], i->argv[2]))
+	if (_setenv(i, i->argv[1], i->argv[2]))
 		return (0);
 	return (1);
 }
@@ -64,11 +64,11 @@ int unset_env(i_tt *i)
 
 	if (i->argc == 1)
 	{
-		_eputs("few arguements.\n");
+		put_t("few arguements.\n");
 		return (1);
 	}
 	for (ii = 1; ii <= i->argc; ii++)
-		unset_env(i, i->argv[ii]);
+		_unsetenv(i, i->argv[ii]);
 	return (0);
 }
 
@@ -83,8 +83,8 @@ int pop_env(i_tt *i)
 	lis_t *n = NULL;
 	size_t ii;
 
-	for (ii = 0; env_t[ii]; ii++)
-		add_node_end(&n, env_t[ii], 0);
+	for (ii = 0; environ[ii]; ii++)
+		add_node_end(&n, environ[ii], 0);
 	i->env = n;
 	return (0);
 }

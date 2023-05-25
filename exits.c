@@ -11,7 +11,7 @@
 char *str_cp(char *ds, char *ss, int n)
 {
 	int ii, jj;
-	char *ss = ds;
+	char *c = ds;
 
 	ii = 0;
 	while (ss[ii] != '\0' && ii < n - 1)
@@ -28,7 +28,7 @@ char *str_cp(char *ds, char *ss, int n)
 			jj++;
 		}
 	}
-	return (ss);
+	return (c);
 }
 
 /**
@@ -42,7 +42,7 @@ char *str_cp(char *ds, char *ss, int n)
 char *str_ca(char *ds, char *ss, int n)
 {
 	int ii, jj;
-	char *ss = ds;
+	char *c = ds;
 
 	ii = 0;
 	jj = 0;
@@ -56,7 +56,7 @@ char *str_ca(char *ds, char *ss, int n)
 	}
 	if (jj < n)
 		ds[ii] = '\0';
-	return (ss);
+	return (c);
 }
 
 /**
