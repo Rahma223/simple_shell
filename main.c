@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * main - entry point
- * @ac: arg count
- * @av: arg vector
- *
- * Return: 0 on success, 1 on error
+ * main - Runs a simple UNIX command interpreter.
+ * @ac: argument.
+ * @av: argument vector
+ * Return: 0 or 1.
  */
+
 int main(int ac, char **av)
 {
 	i_tt info[] = { INFO_INIT };
