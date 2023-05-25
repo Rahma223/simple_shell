@@ -1,6 +1,39 @@
 #include "shell.h"
 
 /**
+ * add_node - adds a node to the start of the list
+ * @head: address of pointer to head node
+ * @str: str field of node
+ * @num: node index used by history
+ *
+ * Return: size of list
+ */
+lis_t *add_node(lis_t **head, const char *str, int num)
+{
+	lis_t *new_head;
+
+	if (!head)
+		return (NULL);
+	new_head = malloc(sizeof(lis_t));
+	if (!new_head)
+		return (NULL);
+	_memset((void *)new_head, 0, sizeof(lis_t));
+	new_head->num = num;
+	if (str)
+	{
+		new_head->str = _strdup(str);
+		if (!new_head->str)
+		{
+			free(new_head);
+			return (NULL);
+		}
+	}
+	new_head->next = *head;
+	*head = new_head;
+	return (new_head);
+}
+
+/**
  * add_node_end - adds a node to the end of the list
  * @head: address of pointer to head node
  * @str: str field of node

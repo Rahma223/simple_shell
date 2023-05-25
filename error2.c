@@ -37,13 +37,13 @@ int err_t(char *c)
 
 void print_e(i_tt *i, char *ss)
 {
-	put_t(i->fname);
-	put_t(": ");
+	_eputs(i->fname);
+	_eputs(": ");
 	print_dd(i->line_count, STDERR_FILENO);
-	put_t(": ");
-	put_t(i->argv[0]);
-	put_t(": ");
-	put_t(ss);
+	_eputs(": ");
+	_eputs(i->argv[0]);
+	_eputs(": ");
+	_eputs(ss);
 }
 
 /**

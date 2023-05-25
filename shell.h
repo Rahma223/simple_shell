@@ -149,6 +149,7 @@ void put_t(char *);
 int _putchar(char);
 
 /* toem_lists.c */
+lis_t *add_node(lis_t **, const char *, int);
 lis_t *add_node_end(lis_t **, const char *, int);
 size_t print_list_str(const lis_t *);
 int delete_node_at_index(lis_t **, unsigned int);
@@ -172,10 +173,19 @@ char **get_environ(i_tt *);
 int _unsetenv(i_tt *, char *);
 int _setenv(i_tt *, char *, char *);
 
-/* toem_realloc.c */
+/* toem_reall.c */
 char *_memset(char *, char, unsigned int);
 void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
+
+/* toem_memory.c */
+int bfree(void **);
+
+
+/* toem_tokenizer.c */
+char **strtow(char *, char *);
+char **strtow2(char *, char);
+
 
 #endif
 
