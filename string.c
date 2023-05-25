@@ -69,7 +69,7 @@ char *_strcat(char *ds, char *s)
 	while (*ds)
 		ds++;
 	while (*s)
-		*s++ = *s++;
+		*ds++ = *s++;
 	*ds = *s;
 	return (ret);
 }

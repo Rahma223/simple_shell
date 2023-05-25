@@ -18,7 +18,7 @@ int hsh(i_tt *info, char **av)
 		clear_info(info);
 		if (inter(info))
 			put_t("$ ");
-		eput_ch(BUF_FLUSH);
+		put_ch(BUF_FLUSH);
 		r = get_input(info);
 		if (r != -1)
 		{
@@ -47,24 +47,20 @@ int hsh(i_tt *info, char **av)
 /**
  * find_builtin - finds a builtin command
  * @info: the parameter & return info struct
- *
- * Return: -1 if builtin not found,
- * 	0 if builtin executed successfully,
- * 	1 if builtin found but not successful,
- * 	2 if builtin signals exit()
+ * Return: -1 or 0
  */
 int find_builtin(i_tt *info)
 {
 	int i, built_in_ret = -1;
 	builtin_table builtintbl[] = {
-		{"exit", _myexit},
-		{"env", _myenv},
-		{"help", _myhelp},
-		{"history", _myhistory},
-		{"setenv", _mysetenv},
-		{"unsetenv", _myunsetenv},
-		{"cd", _mycd},
-		{"alias", _myalias},
+		{"exit", exit_t},
+		{"env", env_t},
+		{"help", help_t},
+		{"history", hist_t},
+		{"setenv", set_env},
+		{"unsetenv", unset_env},
+		{"cd", cd_t},
+		{"alias", ali},
 		{NULL, NULL}
 	};
 
@@ -84,6 +80,7 @@ int find_builtin(i_tt *info)
  *
  * Return: void
  */
+
 void find_cmd(i_tt *info)
 {
 	char *path = NULL;
@@ -101,7 +98,7 @@ void find_cmd(i_tt *info)
 	if (!k)
 		return;
 
-	path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
+	path = find_path(info, get_env(info, "PATH="), info->argv[0]);
 	if (path)
 	{
 		info->path = path;

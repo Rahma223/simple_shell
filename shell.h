@@ -211,5 +211,29 @@ char *find_path(i_tt *, char *, char *);
 /* file of loophsh.c */
 int loophsh(char **);
 
+/* toem_getinfo.c */
+void clear_info(i_tt *);
+void set_info(i_tt *, char **);
+void free_info(i_tt *, int);
+
+/* toem_history.c */
+char *get_history_file(i_tt *info);
+int write_history(i_tt *info);
+int read_history(i_tt *info);
+int build_history_list(i_tt *info, char *buf, int linecount);
+int renumber_history(i_tt *info);
+
+/*toem_getline.c */
+ssize_t get_input(i_tt *);
+int _getline(i_tt *, char **, size_t *);
+void sigintHandler(int);
+
+/* toem_vars.c */
+int is_chain(i_tt *, char *, size_t *);
+void check_chain(i_tt *, char *, size_t *, size_t, size_t);
+int replace_alias(i_tt *);
+int replace_vars(i_tt *);
+int replace_string(char **, char *);
+
 #endif
 
