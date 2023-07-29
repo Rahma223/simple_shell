@@ -21,8 +21,8 @@ list_t *ad_no(list_t **h, const char *s, int n)
 	new_h->num = n;
 	if (s)
 	{
-		new_h->str = _strd(s);
-		if (!new_h->s)
+		new_h->str = _strdu(s);
+		if (!new_h->str)
 		{
 			free(new_h);
 			return (NULL);
@@ -36,11 +36,11 @@ list_t *ad_no(list_t **h, const char *s, int n)
  * add_n - adds a
  * @h: address
  * @s: str fie
- * @n: node in
+ * @nu: node in
  *
  * Return: size
  */
-list_t *add_n(list_t **h, const char *s, int n)
+list_t *add_n(list_t **h, const char *s, int nu)
 {
 	list_t *new_n, *n;
 
@@ -52,11 +52,11 @@ list_t *add_n(list_t **h, const char *s, int n)
 	if (!new_n)
 		return (NULL);
 	_mem((void *)new_n, 0, sizeof(list_t));
-	new_n->num = n;
+	new_n->num = nu;
 	if (s)
 	{
-		new_n->str = _strd(s);
-		if (!new_n->s)
+		new_n->str = _strdu(s);
+		if (!new_n->str)
 		{
 			free(new_n);
 			return (NULL);
@@ -118,7 +118,7 @@ int delete_node_at_index(list_t **h, unsigned int in)
 	n = *h;
 	while (n)
 	{
-		if (i == index)
+		if (i == in)
 		{
 			prev_n->next = n->next;
 			free(n->str);

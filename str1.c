@@ -58,7 +58,7 @@ void _pu(char *st)
 		return;
 	while (st[i] != '\0')
 	{
-		_puc(str[i]);
+		_puc(st[i]);
 		i++;
 	}
 }

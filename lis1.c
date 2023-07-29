@@ -47,7 +47,7 @@ char **l_to_s(list_t *h)
 			return (NULL);
 		}
 
-		s = _str(s, n->str);
+		s = _st(s, n->str);
 		str[i] = s;
 	}
 	str[i] = NULL;
@@ -67,10 +67,10 @@ size_t pr_l(const list_t *ha)
 
 	while (ha)
 	{
-		_pu(con_n(h->num, 10, 0));
+		_pu(con_n(ha->num, 10, 0));
 		_puc(':');
 		_puc(' ');
-		_pu(h->str ? ha->str : "(nil)");
+		_pu(ha->str ? ha->str : "(nil)");
 		_pu("\n");
 		ha = ha->next;
 		i++;

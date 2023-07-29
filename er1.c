@@ -110,8 +110,8 @@ char *con_n(long int nu, int b, int f)
 	*p = '\0';
 
 	do	{
-		*--p = ar[n % base];
-		n /= base;
+		*--p = ar[n % b];
+		n /= b;
 	} while (n != 0);
 
 	if (si)

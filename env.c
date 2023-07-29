@@ -7,7 +7,7 @@
  */
 int myen(info_t *in)
 {
-	print_list_str(in->env);
+	p_list_s(in->env);
 	return (0);
 }
 
@@ -25,7 +25,7 @@ char *gete(info_t *in, const char *na)
 
 	while (n)
 	{
-		pa = starts_with(n->str, na);
+		pa = s_w(n->str, na);
 		if (pa && *pa)
 			return (pa);
 		n = n->next;

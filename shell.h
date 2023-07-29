@@ -112,124 +112,124 @@ typedef struct builtin
 
 
 /* toem_shloop.c */
-int hsh(info_t *in, char **v);
-int f_buil(info_t *in);
-void fi_cm(info_t *in);
-void for_cm(info_t *in);
+int hsh(info_t *, char **);
+int f_buil(info_t *);
+void fi_cm(info_t *);
+void for_cm(info_t *);
 
 /* toem_par.c */
-int is_cm(info_t *in, char *p);
-char *dup_ch(char *p, int st, int sp);
-char *find_p(info_t *in, char *p, char *cm);
+int is_cm(info_t *, char *);
+char *dup_ch(char *, int, int);
+char *find_p(info_t *, char *, char *);
 
 /* loophsh.c */
 int loophsh(char **);
 
 /* toem_er.c */
-void _ep(char *s);
-int _epc(char ca);
-int _puf(char ca, int f);
-int _pus(char *s, int f);
+void _ep(char *);
+int _epc(char);
+int _puf(char, int);
+int _pus(char *, int);
 
 /* toem_str.c */
-int _str(char *sa);
-int strc(char *s1a, char *s2a);
-char *s_w(const char *hay, const char *ne);
-char *_strc(char *de, char *sr);
+int _str(char *);
+int strc(char *, char *);
+char *s_w(const char *, const char *);
+char *_strc(char *, char *);
 
 /* toem_string1.c */
-char *_st(char *de, char *sr);
-char *_strdu(const char *st);
-void _pu(char *st);
-int _puc(char ca);
+char *_st(char *, char *);
+char *_strdu(const char *);
+void _pu(char *);
+int _puc(char);
 
 /* toem_ex.c */
-char *_st(char *d, char *sa, int na);
-char *_strc(char *d, char *s, int na);
-char *strch(char *sa, char ca);
+char *_stn(char *, char *, int);
+char *_strnc(char *, char *, int);
+char *strch(char *, char);
 
 /* toem_rec.c */
-char *_mem(char *sa, char ba, unsigned int na);
-void ffree(char **p);
-void *_re(void *pt, unsigned int o_size, unsigned int n_size);
+char *_mem(char *, char, unsigned int);
+void ffree(char **);
+void *_re(void *, unsigned int, unsigned int);
 
 /* toem_memory.c */
-int bfree(void **p);
+int bfree(void **);
 
 /* to_at.c */
-int inter(info_t *in);
-int is_de(char ca, char *de);
-int isalp(int ca);
-int _at(char *sa);
+int inter(info_t *);
+int is_de(char, char *);
+int isalp(int);
+int _at(char *);
 
 /* toem_er1.c */
-int _err(char *sa);
-void p_err(info_t *in, char *es);
-int p_d(int in, int f);
-char *con_n(long int nu, int b, int f);
-void re_co(char *b);
+int _err(char *);
+void p_err(info_t *, char *);
+int p_d(int, int);
+char *con_n(long int, int, int);
+void re_co(char *);
 
 /* to_bu.c */
-int mye(info_t *in);
-int myc(info_t *in);
-int myh(info_t *in);
+int mye(info_t *);
+int myc(info_t *);
+int myh(info_t *);
 
 /* toem_bu2.c */
-int myhis(info_t *in);
-int un_al(info_t *in, char *s);
-int s_al(info_t *in, char *s);
-int p_al(list_t *n);
+int myhis(info_t *);
+int un_al(info_t *, char *);
+int s_al(info_t *, char *);
+int p_al(list_t *);
 
 /*toem_gl.c */
-ssize_t i_bu(info_t *in, char **b, size_t *l);
-ssize_t g_in(info_t *in);
-ssize_t re_b(info_t *in, char *b, size_t *ia);
-int _getl(info_t *in, char **p, size_t *l);
-void sig(__attribute__((unused))int s_n);
+ssize_t i_bu(info_t *, char **, size_t *);
+ssize_t g_in(info_t *);
+ssize_t re_b(info_t *, char *, size_t *);
+int _getl(info_t *, char **, size_t *);
+void sig(__attribute__((unused))int);
 
 /* toem_getinfo.c */
-void cl_in(info_t *in);
-void se_in(info_t *in, char **a);
-void fr_in(info_t *in, int al);
+void cl_in(info_t *);
+void se_in(info_t *, char **);
+void fr_in(info_t *, int);
 
 /* toem_environ.c */
-int myen(info_t *in);
-char *gete(info_t *in, const char *na);
-int mys(info_t *in);
-int myu(info_t *in);
-int popu(info_t *in);
+int myen(info_t *);
+char *gete(info_t *, const char *);
+int mys(info_t *);
+int myu(info_t *);
+int popu(info_t *);
 
 /* toem_gev.c */
-char **g_env(info_t *in);
-int _uns(info_t *in, char *v);
-int _set(info_t *in, char *v, char *val);
+char **g_env(info_t *);
+int _uns(info_t *, char *);
+int _set(info_t *, char *, char *);
 
 /* toem_his.c */
-char *get_his_f(info_t *in);
-int wr_his(info_t *in);
-int re_his(info_t *in);
-int b_his_l(info_t *in, char *b, int lin);
-int ren_his(info_t *in);
+char *get_his_f(info_t *);
+int wr_his(info_t *);
+int re_his(info_t *);
+int b_his_l(info_t *, char *, int);
+int ren_his(info_t *);
 
 /* toem_lists.c */
-list_t *ad_no(list_t **h, const char *s, int n);
-list_t *add_n(list_t **h, const char *s, int n);
-size_t p_list_s(const list_t *ha);
-int delete_node_at_index(list_t **h, unsigned int in);
-void fr_li(list_t **h_ptr);
+list_t *ad_no(list_t **, const char *, int);
+list_t *add_n(list_t **, const char *, int);
+size_t p_list_s(const list_t *);
+int delete_node_at_index(list_t **, unsigned int);
+void fr_li(list_t **);
 
 /* toem_lis1.c */
-size_t lis_len(const list_t *ha);
-char **l_to_s(list_t *h);
-size_t pr_l(const list_t *ha);
-list_t *node_starts_with(list_t *n, char *pre, char ca);
-ssize_t get_node_index(list_t *h, list_t *n);
+size_t lis_len(const list_t *);
+char **l_to_s(list_t *);
+size_t pr_l(const list_t *);
+list_t *node_starts_with(list_t *, char *, char);
+ssize_t get_node_index(list_t *, list_t *);
 
 /* toem_vars.c */
-int is_ch(info_t *in, char *bu, size_t *Pa);
-void c_cha(info_t *in, char *bu, size_t *pa, size_t ia, size_t len);
-int rep_al(info_t *in);
-int rep_v(info_t *in);
-int rep_str(char **o, char *n);
+int is_ch(info_t *, char *, size_t *);
+void c_cha(info_t *, char *, size_t *, size_t, size_t);
+int rep_al(info_t *);
+int rep_v(info_t *);
+int rep_str(char **, char *);
 
 #endif

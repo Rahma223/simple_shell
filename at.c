@@ -20,7 +20,7 @@ int inter(info_t *in)
 int is_de(char ca, char *de)
 {
 	while (*de)
-		if (*de++ == c)
+		if (*de++ == ca)
 			return (1);
 	return (0);
 }

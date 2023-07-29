@@ -37,8 +37,8 @@ char *dup_ch(char *p, int st, int sp)
 
 	for (ka = 0, i = st; i < sp; i++)
 		if (p[i] != ':')
-			buf[k++] = p[i];
-	buf[k] = 0;
+			buf[ka++] = p[i];
+	buf[ka] = 0;
 	return (buf);
 }
 

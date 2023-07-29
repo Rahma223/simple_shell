@@ -18,13 +18,13 @@ int hsh(info_t *in, char **v)
 		if (inter(in))
 			_pu("$ ");
 		_epc(BUF_FLUSH);
-		r = g_in(in);
+		ra = g_in(in);
 		if (ra != -1)
 		{
 			se_in(in, v);
 			b_ret = f_buil(in);
 			if (b_ret == -1)
-				f_cm(in);
+				fi_cm(in);
 		}
 		else if (inter(in))
 			_puc('\n');
@@ -53,14 +53,13 @@ int f_buil(info_t *in)
 {
 	int i, b_in_ret = -1;
 	builtin_table bu[] = {
-		{"exit", _mye},
-		{"env", _myen},
-		{"help", _myh},
-		{"history", _myhis},
-		{"setenv", _mys},
-		{"unsetenv", _myu},
-		{"cd", _myc},
-		{"alias", _myal},
+		{"exit", mye},
+		{"env", myen},
+		{"help", myh},
+		{"history", myhis},
+		{"setenv", mys},
+		{"unsetenv", myu},
+		{"cd", myc},
 		{NULL, NULL}
 	};
 
@@ -71,11 +70,11 @@ int f_buil(info_t *in)
 			b_in_ret = bu[i].func(in);
 			break;
 		}
-	return (bu_in_ret);
+	return (b_in_ret);
 }
 
 /**
- * f_cm - finds
+ * fi_cm - finds
  * @in: the parameter
  *
  * Return: void
@@ -111,7 +110,7 @@ void fi_cm(info_t *in)
 		else if (*(in->arg) != '\n')
 		{
 			in->status = 127;
-			pr_er(in, "not found\n");
+			p_err(in, "not found\n");
 		}
 	}
 }
@@ -151,7 +150,7 @@ void for_cm(info_t *in)
 		{
 			in->status = WEXITSTATUS(in->status);
 			if (in->status == 126)
-				pr_er(in, "Permission denied\n");
+				p_err(in, "Permission denied\n");
 		}
 	}
 }

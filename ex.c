@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- **_st - the copi
+ **_stn - the copi
  *@d: the desti
  *@sa: the source
  *@na: the amount
  *Return: the conc
  */
-char *_st(char *d, char *sa, int na)
+char *_stn(char *d, char *sa, int na)
 {
 	int i, j;
 	char *s = d;
@@ -31,13 +31,13 @@ char *_st(char *d, char *sa, int na)
 }
 
 /**
- **_strc - conc
+ **_strnc - conc
  *@d: the fig
  *@s: the sou
  *@na: the amou
  *Return: the con
  */
-char *_strc(char *d, char *s, int na)
+char *_strnc(char *d, char *s, int na)
 {
 	int i, j;
 	char *sa = d;

@@ -24,13 +24,13 @@ void se_in(info_t *in, char **a)
 	in->fname = a[0];
 	if (in->arg)
 	{
-		in->argv = strtow(in->arg, " \t");
+		/*in->argv = strtow(in->arg, " \t");*/
 		if (!in->argv)
 		{
 			in->argv = malloc(sizeof(char *) * 2);
 			if (in->argv)
 			{
-				in->argv[0] = _strd(in->arg);
+				in->argv[0] = _strdu(in->arg);
 				in->argv[1] = NULL;
 			}
 		}

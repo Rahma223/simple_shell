@@ -31,7 +31,7 @@ int is_ch(info_t *in, char *bu, size_t *Pa)
 	}
 	else
 		return (0);
-	*pa = j;
+	*Pa = j;
 	return (1);
 }
 
@@ -130,7 +130,7 @@ int rep_v(info_t *in)
 		if (n)
 		{
 			rep_str(&(in->argv[i]),
-				_strdu(_strc(n->str, '=') + 1));
+				_strdu(strch(n->str, '=') + 1));
 			continue;
 		}
 		rep_str(&in->argv[i], _strdu(""));

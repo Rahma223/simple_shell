@@ -16,7 +16,7 @@ ssize_t i_bu(info_t *in, char **b, size_t *l)
 	{
 		free(*b);
 		*b = NULL;
-		signal(SIGINT, sigintHandler);
+		signal(SIGINT, sig);
 #if USE_GETLINE
 		ra = getline(b, &l_p, stdin);
 #else
@@ -31,7 +31,7 @@ ssize_t i_bu(info_t *in, char **b, size_t *l)
 			}
 			in->linecount_flag = 1;
 			re_co(*b);
-			b_hi_l(in, *b, in->histcount++);
+			b_his_l(in, *b, in->histcount++);
 			{
 				*l = ra;
 				in->cmd_buf = b;
@@ -63,7 +63,7 @@ ssize_t g_in(info_t *in)
 		j = i;
 		pa = b + i;
 
-		c_ch(in, b, &j, i, l);
+		c_cha(in, b, &j, i, l);
 		while (j < l)
 		{
 			if (is_ch(in, b, &j))
@@ -128,20 +128,20 @@ int _getl(info_t *in, char **p, size_t *l)
 	if (i == len)
 		i = len = 0;
 
-	ra = re_b(in, b, &len);
+	ra = re_b(in, buf, &len);
 	if (ra == -1 || (ra == 0 && len == 0))
 		return (-1);
 
-	ca = strch(ba + i, '\n');
-	ka = ca ? 1 + (unsigned int)(ca - b) : len;
+	ca = strch(buf + i, '\n');
+	ka = ca ? 1 + (unsigned int)(ca - buf) : len;
 	n_p = _re(pa, sa, sa ? sa + ka : ka + 1);
 	if (!n_p)
 		return (pa ? free(pa), -1 : -1);
 
 	if (sa)
-		_strc(n_p, b + i, ka - i);
+		_strnc(n_p, buf + i, ka - i);
 	else
-		_st(n_p, b + i, ka - i + 1);
+		_stn(n_p, buf + i, ka - i + 1);
 
 	sa += ka - i;
 	i = ka;

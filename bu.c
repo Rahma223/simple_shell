@@ -11,7 +11,7 @@ int mye(info_t *in)
 
 	if (in->argv[1])
 	{
-		ex = err(in->argv[1]);
+		ex = _err(in->argv[1]);
 		if (ex == -1)
 		{
 			in->status = 2;
@@ -20,7 +20,7 @@ int mye(info_t *in)
 			_epc('\n');
 			return (1);
 		}
-		in->err_num = err(in->argv[1]);
+		in->err_num = _err(in->argv[1]);
 		return (-2);
 	}
 	in->err_num = -1;

@@ -23,7 +23,7 @@ int un_al(info_t *in, char *s)
 	char *pa, ca;
 	int r;
 
-	pa = _strchr(s, '=');
+	pa = strch(s, '=');
 	if (!pa)
 		return (1);
 	ca = *pa;
@@ -45,14 +45,14 @@ int s_al(info_t *in, char *s)
 {
 	char *pa;
 
-	pa = _strchr(s, '=');
+	pa = strch(s, '=');
 	if (!pa)
 		return (1);
 	if (!*++pa)
-		return (unset_alias(in, s));
+		return (un_al(in, s));
 
 	un_al(in, s);
-	return (add_node_end(&(in->alias), s, 0) == NULL);
+	return (add_n(&(in->alias), s, 0) == NULL);
 }
 
 /**
@@ -67,11 +67,11 @@ int p_al(list_t *n)
 
 	if (n)
 	{
-		pa = _strchr(n->str, '=');
+		pa = strch(n->str, '=');
 		for (aa = n->str; aa <= pa; aa++)
 		_puc(*aa);
 		_puc('\'');
-		_pu(pc + 1);
+		_pu(pa + 1);
 		_pu("'\n");
 		return (0);
 	}
@@ -101,7 +101,7 @@ int myal(info_t *in)
 	}
 	for (i = 1; in->argv[i]; i++)
 	{
-		pa = _strchr(in->argv[i], '=');
+		pa = strch(in->argv[i], '=');
 		if (pa)
 			s_al(in, in->argv[i]);
 		else
