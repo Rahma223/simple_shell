@@ -24,7 +24,7 @@ void se_in(info_t *in, char **a)
 	in->fname = a[0];
 	if (in->arg)
 	{
-		/*in->argv = strtow(in->arg, " \t");*/
+		in->argv = strt(in->arg, " \t");
 		if (!in->argv)
 		{
 			in->argv = malloc(sizeof(char *) * 2);

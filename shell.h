@@ -143,6 +143,10 @@ char *_strdu(const char *);
 void _pu(char *);
 int _puc(char);
 
+/*to_tok.c */
+char **strt(char *, char *);
+char **strt2(char *, char);
+
 /* toem_ex.c */
 char *_stn(char *, char *, int);
 char *_strnc(char *, char *, int);
